@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "Hack";
+  src: local("Hack Regular"), url("ttf/Hack-Regular.ttf");
+}
+
+:root {
+  --bg: #1a1b26;
+  --fg: #c0caf5;
+  --black: #15161e;
+  --red: #f7768e;
+  --green: #9ece6a;
+  --yellow: #e0af68;
+  --blue: #7aa2f7;
+  --purple: #bb9af7;
+  --cyan: #7dcfff;
+  --light-gray: #a9b1d6;
+  --gray: #414868;
+}
+
+html {
+  font-family: "Hack", monospace;
+  text-align: center;
+  color: var(--fg);
+  background-color: var(--gray);
+  /* background-size: cover; */
+  /* background-position: center; */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.status-bar {
+  font-size: x-small;
+  height: 3vh;
+  padding: 0;
+  margin-bottom: 1vh;
+}
+
+.shortcuts-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-gap: 2vh;
+}
+
+.shortcuts {
+  width: fit-content;
+  margin: 0 0;
+  padding: 0;
+}
+
+.shortcuts:first-child {
+  font-weight: 900;
+}
+
+.shortcut {
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.shortcut:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.pad-terminal {
+  padding-top: 2vh;
+  padding-left: 2vh;
+  padding-right: 2vh;
+  height: 96vh;
+}
+
+.scrollable {
+  height: 96vh;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+#terminal {
+  min-height: 100%;
+  /* line-height: 0.5rem; */
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: rgba(21, 22, 30, 0.9);
+  border: 1px hidden var(--fg);
+  border-radius: 15px;
+  text-align: left;
+}
+
+#terminal p {
+  margin: 2px;
+}
+
+.prompt {
+  display: flex;
+}
+
+.green {
+  color: var(--green);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.red {
+  color: var(--red);
+}
+
+.yellow {
+  color: var(--yellow);
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.light-gray {
+  color: var(--light-gray);
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.black {
+  color: var(--black);
+}
+
+#input {
+  width: 100%;
+  outline: none;
+  background-color: transparent;
+  font: inherit;
+  border: none;
+  color: inherit;
+}
