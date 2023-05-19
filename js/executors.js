@@ -68,7 +68,7 @@ export default {
         });
         shortcutsOutput += "</div>";
       });
-      render(shortcutsOutput + "</div><br />");
+      render(shortcutsOutput + "</div>");
     } else {
       error("yellow", "No Shortcuts", "Add some with the `add` command!");
     }

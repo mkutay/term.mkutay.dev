@@ -9,6 +9,7 @@ export default [
       // Firebase: "https://console.firebase.google.com/u/0",
       "Cookie Blog": "https://cookieblog.net",
       "Dynamic Initiative": "https://dynamicini.org",
+      Codeforces: "https://codeforces.com/profile/kuyta"
     },
   },
   // {
@@ -29,8 +30,8 @@ export default [
       Twitter: "https://twitter.com/kuyta37?s=21",
       Instagram: "https://www.instagram.com/mkutayboz/",
       Youtube: "https://www.youtube.com/channel/UCQ6fcDq_sqm-goM7Xt8yH6w",
-      Email: "mkutaybzkrt01101011@gmail.com",
-      Discord: "kutay#7674",
+      Email: "mailto:mkutaybzkrt01101011@gmail.com",
+      Discord: "https://discordapp.com/users/582182759112638466",
     },
   },
   // {

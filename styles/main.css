@@ -86,7 +86,7 @@ body {
   /* line-height: 0.5rem; */
   box-sizing: border-box;
   padding: 1rem;
-  background-color: rgba(21, 22, 30, 0.9);
+  background-color: rgba(27, 31, 38, 0.6); /* TERMINAL COLOR IMPORTANT THING */
   border: 1px hidden var(--fg);
   border-radius: 15px;
   text-align: left;
