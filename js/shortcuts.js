@@ -18,7 +18,7 @@ export default [
   //     // Outlook: "https://outlook.office365.com/mail/inbox",
   //     // Canvas: "https://sit.instructure.com",
   //     // MyStevens: "https://login.stevens.edu/app/UserHome",
-  //     
+  //
   //   },
   // },
   {
