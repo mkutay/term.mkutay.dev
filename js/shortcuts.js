@@ -5,7 +5,7 @@ export default [
     items: {
       Github: "https://github.com/MKutay",
       "Dev.to": "https://dev.to/mkutay",
-      Blog: "https://blog.mkutay.dev",
+      "Deterministic Blog": "https://blog.mkutay.dev",
       // Firebase: "https://console.firebase.google.com/u/0",
       "Cookie Blog": "https://cookieblog.net",
       "Dynamic Initiative": "https://dynamicini.org",
