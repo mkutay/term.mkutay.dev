@@ -9,7 +9,7 @@ export default [
       // Firebase: "https://console.firebase.google.com/u/0",
       "Cookie Blog": "https://cookieblog.net",
       "Dynamic Initiative": "https://dynamicini.org",
-      Codeforces: "https://codeforces.com/profile/kuyta"
+      Codeforces: "https://codeforces.com/profile/kuyta",
     },
   },
   // {
