@@ -1,44 +1,48 @@
 export default [
   {
     category: "Dev",
-    color: "cyan",
-    items: {
-      Github: "https://github.com",
-      AWS: "https://aws.amazon.com",
-      "Dev.to": "https://dev.to",
-      Firebase: "https://console.firebase.google.com/u/0",
-    },
-  },
-  {
-    category: "School",
-    color: "red",
-    items: {
-      Outlook: "https://outlook.office365.com/mail/inbox",
-      Canvas: "https://sit.instructure.com",
-      MyStevens: "https://login.stevens.edu/app/UserHome",
-    },
-  },
-  {
-    category: "Work",
-    color: "green",
-    items: {
-      Linkedin: "https://linkedin.com",
-      Twitter: "https://twitter.com",
-      Leetcode: "https://leetcode.com",
-      Handshake: "https://app.joinhandshake.com/stu/postings",
-      Indeed: "https://www.indeed.com/",
-    },
-  },
-  {
-    category: "Misc",
     color: "purple",
     items: {
-      Trakt: "https://trakt.tv/users/peterrauscher/lists",
-      YouTube: "https://www.youtube.com/",
-      Fmovies: "https://fmovies.to/home",
-      Zoro: "https://zoro.to",
-      TempMail: "https://tempmail.email/",
-      // IPTorrents: "https://iptorrents.com/t",
+      Github: "https://github.com/MKutay",
+      "Dev.to": "https://dev.to/mkutay",
+      Blog: "https://blog.mkutay.dev",
+      // Firebase: "https://console.firebase.google.com/u/0",
+      "Cookie Blog": "https://cookieblog.net"
+      "Dynamic Initiative": "https://dynamicini.org"
     },
   },
+  // {
+  //   category: "School",
+  //   color: "red",
+  //   items: {
+  //     // Outlook: "https://outlook.office365.com/mail/inbox",
+  //     // Canvas: "https://sit.instructure.com",
+  //     // MyStevens: "https://login.stevens.edu/app/UserHome",
+  //     
+  //   },
+  // },
+  {
+    category: "Contact",
+    color: "cyan",
+    items: {
+      Linkedin: "https://www.linkedin.com/in/mehmet-kutay-bozkurt-6837b7241/",
+      Twitter: "https://twitter.com/kuyta37?s=21",
+      Instagram: "https://www.instagram.com/mkutayboz/",
+      Youtube: "https://www.youtube.com/channel/UCQ6fcDq_sqm-goM7Xt8yH6w"
+      Email: "mkutaybzkrt01101011@gmail.com",
+      Discord: "kutay#7674"
+    },
+  },
+  // {
+  //   category: "Misc",
+  //   color: "purple",
+  //   items: {
+  //     Trakt: "https://trakt.tv/users/peterrauscher/lists",
+  //     YouTube: "https://www.youtube.com/",
+  //     // Fmovies: "https://fmovies.to/home",
+  //     // Zoro: "https://zoro.to",
+  //     // TempMail: "https://tempmail.email/",
+  //     // IPTorrents: "https://iptorrents.com/t",
+  //   },
+  // },
 ];
