@@ -7,8 +7,8 @@ export default [
       "Dev.to": "https://dev.to/mkutay",
       Blog: "https://blog.mkutay.dev",
       // Firebase: "https://console.firebase.google.com/u/0",
-      "Cookie Blog": "https://cookieblog.net"
-      "Dynamic Initiative": "https://dynamicini.org"
+      "Cookie Blog": "https://cookieblog.net",
+      "Dynamic Initiative": "https://dynamicini.org",
     },
   },
   // {
@@ -28,9 +28,9 @@ export default [
       Linkedin: "https://www.linkedin.com/in/mehmet-kutay-bozkurt-6837b7241/",
       Twitter: "https://twitter.com/kuyta37?s=21",
       Instagram: "https://www.instagram.com/mkutayboz/",
-      Youtube: "https://www.youtube.com/channel/UCQ6fcDq_sqm-goM7Xt8yH6w"
+      Youtube: "https://www.youtube.com/channel/UCQ6fcDq_sqm-goM7Xt8yH6w",
       Email: "mkutaybzkrt01101011@gmail.com",
-      Discord: "kutay#7674"
+      Discord: "kutay#7674",
     },
   },
   // {
