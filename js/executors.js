@@ -7,7 +7,7 @@ export default {
     if (cachedQuote) {
       cachedQuote = JSON.parse(cachedQuote);
       if (
-        dateDiffInMinutes(parseInt(cachedQuote.fetchedAt), Date.now()) < 720
+        dateDiffInMinutes(parseInt(cachedQuote.fetchedAt), Date.now()) < 10
       ) {
         render(`"${cachedQuote.content}" - ${cachedQuote.author}`);
         return;
