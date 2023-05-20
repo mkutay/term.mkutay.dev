@@ -54,9 +54,9 @@ body {
   padding: 0;
 }
 
-.shortcuts:first-child {
+/* .shortcuts:first-child {
   font-weight: 900;
-}
+} */
 
 .shortcut {
   text-decoration: none;

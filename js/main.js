@@ -18,14 +18,13 @@ input.addEventListener("keydown", function (e) {
         c.name.map((n) => n.toLowerCase()).includes(command)
       );
       if (commandDetails) {
-        if (command === "help") commandDetails.execute(commands);
+        if (command === "help") commandDetails.execute(commands, options);
         else commandDetails.execute(options);
       } else {
         const shortcutDetails = shortcuts
           .flatMap((c) => Object.entries(c.items))
           .find(([i]) => i.toLowerCase().startsWith(command));
         if (shortcutDetails) {
-          console.log(shortcutDetails);
           render(`Redirecting to ${shortcutDetails[0]}...`);
           window.location.href = shortcutDetails[1];
         } else error("yellow", command, "command not found");

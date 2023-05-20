@@ -9,6 +9,10 @@ export default [
   {
     name: ["ls"],
     description: "Lists available shortcuts",
+    options: {
+      "blogs": "Outputs a list of great blogs chosen by me.",
+      "shortcuts": "Outputs the shortcut list",
+    },
     execute: executor.ls,
   },
   {
@@ -31,9 +35,4 @@ export default [
     description: "Displays a random famous quote",
     execute: executor.motd,
   },
-  {
-    name: ["blog_ls"],
-    description: "Outputs great blogs I found on the internet",
-    execute: executor.blog_ls,
-  }
 ];
