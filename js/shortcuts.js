@@ -6,10 +6,10 @@ export default [
       Github: "https://github.com/MKutay",
       "Dev.to": "https://dev.to/mkutay",
       "Deterministic Blog": "https://blog.mkutay.dev",
+      "Kutay's Academia": "https://academia.mkutay.dev/",
       // Firebase: "https://console.firebase.google.com/u/0",
       "Cookie Blog": "https://cookieblog.net",
       "Dynamic Initiative": "https://dynamicini.org",
-      Codeforces: "https://codeforces.com/profile/kuyta",
     },
   },
   // {
