@@ -19,7 +19,7 @@ function ls_blogs() {
   blogs.forEach((s) => {
     blogsOutput += `<div class="shortcuts"><p class="${s.color}">~/${s.category}</p>`;
     Object.entries(s.items).forEach(([name, url_desc]) => {
-      blogsOutput += `<p><span class="${s.color}">> </span><a class="shortcut" href="${url_desc["link"]}">${name}</a>: ${url_desc["description"]}</p>`;
+      blogsOutput += `<p><span class="${s.color}">> </span><a class="shortcut" href="${url_desc["url"]}">${name}</a>: ${url_desc["description"]}</p>`;
     });
     blogsOutput += "</div>";
   });
