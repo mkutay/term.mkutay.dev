@@ -34,6 +34,6 @@ export default [
   {
     name: ["blog_ls"],
     description: "Outputs great blogs I found on the internet",
-    execute: executer.blog_ls,
+    execute: executor.blog_ls,
   }
 ];
