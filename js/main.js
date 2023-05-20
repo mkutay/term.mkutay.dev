@@ -2,6 +2,7 @@ import commands from "./commands.js";
 import executors from "./executors.js";
 import { error, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
+import blogs from "./blogs.js";
 
 const input = document.getElementById("input");
 const output = document.getElementById("output");
@@ -13,6 +14,7 @@ input.addEventListener("keydown", function (e) {
     const options = userInput.slice(1);
     render(`<span class="red">$&nbsp;</span>${input.value}`);
     try {
+      console.log(commands);
       const commandDetails = commands.find((c) =>
         c.name.map((n) => n.toLowerCase()).includes(command)
       );

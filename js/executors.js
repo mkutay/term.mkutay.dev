@@ -1,7 +1,24 @@
 import { dateDiffInMinutes, error, getWeather, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
+import blogs from "./blogs.js";
 
 export default {
+  blog_ls: () => {
+    console.log(blogs);
+    if (blogs) {
+      let blogsOutput = '<div class="shortcuts-container">';
+      blogs.forEach((s) => {
+        blogsOutput += `<div class="shortcuts"><p class="${s.color}">~/${s.category}</p>`;
+        Object.entries(s.items).forEach(([name, url_desc]) => {
+          blogsOutput += `<p><span class="${s.color}">> </span><a class="shortcut" href="${url_desc["link"]}">${name}</a></p>`;
+        });
+        blogsOutput += "</div>";
+      });
+      render(blogsOutput + "</div>");
+    } else {
+      error("yellow", "No blogs, for now.", "Add some with the `add` command!");
+    }
+  },
   motd: () => {
     let cachedQuote = localStorage.getItem("cachedQuote");
     if (cachedQuote) {

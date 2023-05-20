@@ -31,4 +31,9 @@ export default [
     description: "Displays a random famous quote",
     execute: executor.motd,
   },
+  {
+    name: ["blog_ls"],
+    description: "Outputs great blogs I found on the internet",
+    execute: executer.blog_ls,
+  }
 ];
