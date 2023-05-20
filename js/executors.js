@@ -122,17 +122,20 @@ export default {
     } else { // options
       let helpMessage = "";
       cmdList.forEach((c) => {
-        if (c.name == options[0]) {
-          helpMessage = `<p><span class="cyan">${c.name}</span>: ${c.description}<pre>\n</pre>`;
-          let padToLen = 0;
-          Object.entries(c.options).forEach(([option_name, option_desc]) => {
-            padToLen = Math.max(padToLen, option_name.length);
-          });
-          console.log(padToLen);
-          Object.entries(c.options).forEach(([option_name, option_desc]) => {
-            let paddedOption = option_name.padEnd(padToLen, " ").replaceAll(" ", "&nbsp;");
-            helpMessage += `<p><span class="purple">${paddedOption}</span>&nbsp;&nbsp;&nbsp;&nbsp;${option_desc}</p>`
-          });
+        if (options[0] == c.name || options[0] in c.name) {
+          helpMessage = `<p><span class="cyan">${c.name}</span>: ${c.description}`;
+          if (c.options) {
+            helpMessage += `<pre>\n</pre>`;
+            let padToLen = 0;
+            Object.entries(c.options).forEach(([option_name, option_desc]) => {
+              padToLen = Math.max(padToLen, option_name.length);
+            });
+            console.log(padToLen);
+            Object.entries(c.options).forEach(([option_name, option_desc]) => {
+              let paddedOption = option_name.padEnd(padToLen, " ").replaceAll(" ", "&nbsp;");
+              helpMessage += `<p><span class="purple">${paddedOption}</span>&nbsp;&nbsp;&nbsp;&nbsp;${option_desc}</p>`
+            });
+          }
           helpMessage += `</p>`;
           return;
         }
