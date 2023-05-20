@@ -10,8 +10,12 @@ export default [
     name: ["ls"],
     description: "Lists available shortcuts",
     options: {
-      "blogs": "Outputs a list of great blogs chosen by me.",
-      "shortcuts": "Outputs the shortcut list",
+      "blogs": {
+        description: "Outputs a list of great blogs chosen by me."
+      },
+      "shortcuts": {
+        description: "Outputs the shortcut list"
+      },
     },
     execute: executor.ls,
   },
@@ -35,4 +39,14 @@ export default [
     description: "Displays a random famous quote",
     execute: executor.motd,
   },
+  {
+    name: ["about"],
+    description: "Prints information about anything",
+    options: {
+      "me": {
+        description: "Information about me.",
+      }
+    },
+    execute: executor.about,
+  }
 ];

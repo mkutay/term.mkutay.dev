@@ -1,6 +1,7 @@
 import { dateDiffInMinutes, error, getWeather, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 import blogs from "./blogs.js";
+import abouts from "./about.js";
 
 function ls_shortcuts() {
   let shortcutsOutput = '<div class="shortcuts-container">';
@@ -27,6 +28,21 @@ function ls_blogs() {
 }
 
 export default {
+  about: (options) => {
+    console.log(options)
+    if (options.length == 0) {
+      error("yellow", "Please specify an option.");
+      return;
+    }
+    let aboutOutput = "";
+    abouts.forEach((s) => {
+      console.log(s);
+      if (options.includes(s.name)) {
+        aboutOutput += `<p>${s.info}</p><pre>\n</pre>`;
+      }
+    });
+    render(aboutOutput, false);
+  },
   motd: () => {
     let cachedQuote = localStorage.getItem("cachedQuote");
     if (cachedQuote) {
@@ -104,8 +120,6 @@ export default {
     }
   },
   help: (cmdList, options) => {
-    console.log(cmdList);
-    console.log(options);
     if (options.length > 1) {
       error("yellow", "More than one options. Abort!");
     } else if (options.length == 0) {
@@ -130,17 +144,19 @@ export default {
             Object.entries(c.options).forEach(([option_name, option_desc]) => {
               padToLen = Math.max(padToLen, option_name.length);
             });
-            console.log(padToLen);
             Object.entries(c.options).forEach(([option_name, option_desc]) => {
               let paddedOption = option_name.padEnd(padToLen, " ").replaceAll(" ", "&nbsp;");
-              helpMessage += `<p><span class="purple">${paddedOption}</span>&nbsp;&nbsp;&nbsp;&nbsp;${option_desc}</p>`
+              helpMessage += `<p><span class="purple">${paddedOption}</span>&nbsp;&nbsp;&nbsp;&nbsp;${option_desc.description}</p>`
             });
           }
           helpMessage += `</p>`;
           return;
         }
       });
-      render(helpMessage, false);
+      if (helpMessage == "") {
+        error("yellow", "There is no such option.");
+      } else 
+        render(helpMessage, false);
     }
   },
   clear: () => {
