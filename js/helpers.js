@@ -21,23 +21,38 @@ const error = (color, message) => {
 
 const getDate = () => {};
 
-const getFeed = (feedUrl) => {
-  let posts = [];
+const getFeed = (feedUrl, blogName) => {
+  let errorFlag = false;
+  let html = `<p><span class="purple">Latest blog posts for ${blogName}:</span><pre>\n</pre>`;
+  let count = -1;
   fetch(feedUrl)
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(data => {
       const items = data.querySelectorAll("link");
       items.forEach(el => {
+        count++;
+        if (count < 2 || count > 4) return;
+        console.log(el);
         let itemLink = el.attributes[0].textContent;
-        let itemTitle = ""
         if (el.attributes[3]) {
-          itemTitle = el.attributes[3].textContent;
+          let itemTitle = el.attributes[3].textContent;
+          html += `<p><a class="shortcut" href="${itemLink}">${itemTitle}</a></p>`;
         }
-        posts.push([itemLink, itemTitle]);
       });
+    })
+    .catch((e) => {
+      error("red", "Couldn't fetch data from feed.xml.");
+      errorFlag = true;
+      console.log(e);
     });
-  return posts;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      html += `</p>`;
+      resolve(html, errorFlag);
+    }, 500);
+  });
 };
 
 export { render, error, getDate, dateDiffInMinutes, getFeed };

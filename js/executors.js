@@ -45,16 +45,15 @@ export default {
             error("yellow", "There is no feed for that blog.");
             return;
           }
-          let posts = getFeed(blogInfo.feed);
-          console.log(posts[0]);
-          let feedOutput = "";
-          feedOutput += `<p><span class="purple">Latest blog posts for ${blogName}:</span><pre>\n</pre>`;
-          for (let i = 2; i < 5; i++) {
-            link = posts[i].link;
-            title = posts[i].title;
-            feedOutput += `<a class="shortcut" href="${link}">${title}</a>`;
-          }
-          render(feedOutput);
+          // setTimeout(function() {
+          //   render(feedOutput);
+          // }, 500);
+          let feedOutput = getFeed(blogInfo.feed, blogName);
+          feedOutput.then((html, errorFlag) => {
+            if (errorFlag == false) {
+              render(html);
+            }
+          });
         }
       });
     });
