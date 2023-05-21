@@ -2,11 +2,6 @@ import executor from "./executors.js";
 
 export default [
   {
-    name: ["search", "s"],
-    description: "Searches DuckDuckGo for the given query",
-    execute: executor.search,
-  },
-  {
     name: ["ls"],
     description: "Lists available shortcuts",
     options: {
@@ -28,11 +23,6 @@ export default [
     name: ["clear"],
     description: "Clears the output history",
     execute: executor.clear,
-  },
-  {
-    name: ["weather"],
-    description: "Displays the weather forecast",
-    execute: executor.weather,
   },
   {
     name: ["motd"],

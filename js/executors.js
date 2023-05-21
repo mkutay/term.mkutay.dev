@@ -1,4 +1,4 @@
-import { dateDiffInMinutes, error, getWeather, render } from "./helpers.js";
+import { dateDiffInMinutes, error, render } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 import blogs from "./blogs.js";
 import abouts from "./about.js";
@@ -33,15 +33,20 @@ export default {
     if (options.length == 0) {
       error("yellow", "Please specify an option.");
       return;
+    } else if (options.length > 1) {
+      error("yellow", "More than one option. Abort!");
+    } else {
+      let aboutOutput = "";
+      abouts.forEach((s) => {
+        if (options[0] == s.name) {
+          aboutOutput += `<p>${s.info}</p><pre>\n</pre>`;
+        }
+      });
+      if (aboutOutput == "") {
+        error("yellow", "Invalid option.");
+      } else 
+        render(aboutOutput, false);
     }
-    let aboutOutput = "";
-    abouts.forEach((s) => {
-      console.log(s);
-      if (options.includes(s.name)) {
-        aboutOutput += `<p>${s.info}</p><pre>\n</pre>`;
-      }
-    });
-    render(aboutOutput, false);
   },
   motd: () => {
     let cachedQuote = localStorage.getItem("cachedQuote");
@@ -65,39 +70,6 @@ export default {
           })
         );
       });
-  },
-  weather: (options) => {
-    let usage = `
-          <p>Usage: weather [set key &lt;key&gt;] [set loc &lt;city,state,country&gt;]</p>
-          <p>If no options are provided, the current weather forecast will be displayed</p>
-          <p>Options:</p>
-          <p>key : obtain a key from <a class="shortcut" href="https://openweathermap.org">https://openweathermap.org</a></p>
-          <p>loc : comma-separated list of city name, state code (omit if outside the US), and ISO-3166 country code</p>
-           `;
-    if (!options || options.length === 0) {
-      return getWeather();
-    } else if (options[0] === "set") {
-      if (options[1] === "key") {
-        localStorage.setItem("WEATHER_API_KEY", options[2]);
-        render(`Weather API key was set to ${options[2]}`);
-      } else if (options[1] === "loc") {
-        localStorage.setItem("loc", options[2]);
-        render(`Location set to ${options[2]}`);
-      } else render(usage, false);
-    } else {
-      render(usage, false);
-    }
-  },
-  search: (options) => {
-    const query = options.join(" ") || null;
-    if (query) {
-      window.location.href = `https://duckduckgo.com/?q=${encodeURIComponent(
-        query
-      )}`;
-    } else {
-      render("No query, redirecting to DDG!");
-      window.location.href = "https://duckduckgo.com";
-    }
   },
   ls: (options) => {
     if (!options) {
