@@ -38,5 +38,10 @@ export default [
       }
     },
     execute: executor.about,
+  },
+  {
+    name: ["feed"],
+    description: "Gets the latest blog posts of added blogs.",
+    execute: executor.feed,
   }
 ];

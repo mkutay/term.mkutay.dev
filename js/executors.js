@@ -1,4 +1,4 @@
-import { dateDiffInMinutes, error, render } from "./helpers.js";
+import { dateDiffInMinutes, error, render, getFeed } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 import blogs from "./blogs.js";
 import abouts from "./about.js";
@@ -28,11 +28,40 @@ function ls_blogs() {
 }
 
 export default {
-  about: (options) => {
-    console.log(options)
+  feed: (options) => {
     if (options.length == 0) {
       error("yellow", "Please specify an option.");
       return;
+    }
+    if (options.length > 1) {
+      error("yellow", "More than one option. Abort!");
+      return;
+    }
+    blogs.forEach((s) => {
+      Object.entries(s.items).forEach(([blogName, blogInfo]) => {
+        let blogNameArray = blogName.split(" ");
+        if (blogNameArray[0].toLowerCase() == options[0]) {
+          if (!blogInfo.feed) {
+            error("yellow", "There is no feed for that blog.");
+            return;
+          }
+          let posts = getFeed(blogInfo.feed);
+          console.log(posts[0]);
+          let feedOutput = "";
+          feedOutput += `<p><span class="purple">Latest blog posts for ${blogName}:</span><pre>\n</pre>`;
+          for (let i = 2; i < 5; i++) {
+            link = posts[i].link;
+            title = posts[i].title;
+            feedOutput += `<a class="shortcut" href="${link}">${title}</a>`;
+          }
+          render(feedOutput);
+        }
+      });
+    });
+  },
+  about: (options) => {
+    if (options.length == 0) {
+      error("yellow", "Please specify an option.");
     } else if (options.length > 1) {
       error("yellow", "More than one option. Abort!");
     } else {
@@ -45,7 +74,7 @@ export default {
       if (aboutOutput == "") {
         error("yellow", "Invalid option.");
       } else 
-        render(aboutOutput, false);
+        render(aboutOutput);
     }
   },
   motd: () => {

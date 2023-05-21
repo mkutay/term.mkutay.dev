@@ -27,10 +27,10 @@ input.addEventListener("keydown", function (e) {
         if (shortcutDetails) {
           render(`Redirecting to ${shortcutDetails[0]}...`);
           window.location.href = shortcutDetails[1];
-        } else error("yellow", command, "command not found");
+        } else error("yellow", "Command not found.");
       }
     } catch (e) {
-      error("red", "JS Error", e.message);
+      error("red", e.message);
     }
     input.value = "";
   }

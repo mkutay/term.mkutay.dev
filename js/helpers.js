@@ -21,4 +21,25 @@ const error = (color, message) => {
 
 const getDate = () => {};
 
-export { render, error, getDate, dateDiffInMinutes };
+const getFeed = (feedUrl) => {
+  let posts = [];
+  fetch(feedUrl)
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+      const items = data.querySelectorAll("link");
+      items.forEach(el => {
+        let itemLink = el.attributes[0].textContent;
+        let itemTitle = ""
+        if (el.attributes[3]) {
+          itemTitle = el.attributes[3].textContent;
+        }
+        posts.push([itemLink, itemTitle]);
+      });
+    });
+  return posts;
+};
+
+export { render, error, getDate, dateDiffInMinutes, getFeed };
+
+
