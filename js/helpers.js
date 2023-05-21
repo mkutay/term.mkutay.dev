@@ -51,7 +51,7 @@ const getFeed = (feedUrl, blogName) => {
     setTimeout(() => {
       html += `</p>`;
       resolve(html, errorFlag);
-    }, 500);
+    }, 1000);
   });
 };
 
