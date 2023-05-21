@@ -33,7 +33,6 @@ const getFeed = (feedUrl, blogName) => {
       items.forEach(el => {
         count++;
         if (count < 2 || count > 4) return;
-        console.log(el);
         let itemLink = el.attributes[0].textContent;
         if (el.attributes[3]) {
           let itemTitle = el.attributes[3].textContent;
@@ -43,7 +42,7 @@ const getFeed = (feedUrl, blogName) => {
     })
     .catch((e) => {
       error("red", "Couldn't fetch data from feed.xml.");
-      errorFlag = true;
+      html = "fetch error";
       console.log(e);
     });
 
@@ -51,7 +50,7 @@ const getFeed = (feedUrl, blogName) => {
     setTimeout(() => {
       html += `</p>`;
       resolve(html, errorFlag);
-    }, 1000);
+    }, 500);
   });
 };
 

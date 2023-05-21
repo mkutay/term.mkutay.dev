@@ -50,9 +50,9 @@ export default {
           // }, 500);
           let feedOutput = getFeed(blogInfo.feed, blogName);
           feedOutput.then((html, errorFlag) => {
-            if (errorFlag == false) {
-              render(html);
-            }
+            console.log(html);
+            if (html == "fetch error</p>") return;
+            render(html);
           });
         }
       });
