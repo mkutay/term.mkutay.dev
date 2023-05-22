@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
   executors.ls();
   executors.motd();
   setTimeout(() => {
-    executors.echo([`<pre>\n</pre><p>hey! I have a new blog at <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
+    executors.echo([`<pre>\n</pre><p>hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
   }, 500);
   let filenames = ["nord.png"];
   let root = document.getElementsByTagName("html")[0];
