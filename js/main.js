@@ -39,7 +39,9 @@ input.addEventListener("keydown", function (e) {
 window.addEventListener("load", () => {
   executors.ls();
   executors.motd();
-  executors.echo([`<pre>\n</pre><p>hey! I have a new blog at <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
+  setTimeout(() => {
+    executors.echo([`<pre>\n</pre><p>hey! I have a new blog at <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
+  }, 500);
   let filenames = ["nord.png"];
   let root = document.getElementsByTagName("html")[0];
   root.style.backgroundImage = `url("./backgrounds/${
