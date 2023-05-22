@@ -43,5 +43,10 @@ export default [
     name: ["feed"],
     description: "Gets the latest blog posts of added blogs.",
     execute: executor.feed,
+  },
+  {
+    name: ["echo"],
+    description: "Writes something to the command line.",
+    execute: executor.echo,
   }
 ];

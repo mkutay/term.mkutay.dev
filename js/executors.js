@@ -28,6 +28,11 @@ function ls_blogs() {
 }
 
 export default {
+  echo: (options) => {
+    var echoStr = options.join(" ");
+    console.log(echoStr);
+    render(echoStr, true);
+  },
   feed: (options) => {
     if (options.length == 0) {
       error("yellow", "Please specify an option.");
@@ -81,7 +86,7 @@ export default {
     if (cachedQuote) {
       cachedQuote = JSON.parse(cachedQuote);
       if (dateDiffInMinutes(parseInt(cachedQuote.fetchedAt), Date.now()) < 10) {
-        render(`"${cachedQuote.content}" - ${cachedQuote.author}`);
+        render(`<p>"${cachedQuote.content}" - ${cachedQuote.author}</p>`);
         return;
       }
     }
