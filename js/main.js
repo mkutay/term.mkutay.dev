@@ -38,10 +38,8 @@ input.addEventListener("keydown", function (e) {
 
 window.addEventListener("load", () => {
   executors.ls();
-  executors.motd();
-  setTimeout(() => {
-    executors.echo([`<pre>\n</pre><p>hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
-  }, 500);
+  // executors.motd();
+  executors.echo([`<pre>\n</pre><p>hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. check it out!</p>`]);
   let filenames = ["nord.png"];
   let root = document.getElementsByTagName("html")[0];
   root.style.backgroundImage = `url("./backgrounds/${
