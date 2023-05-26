@@ -22,7 +22,6 @@ const error = (color, message) => {
 const getDate = () => {};
 
 const getFeed = (feedUrl, blogName) => {
-  let errorFlag = false;
   let html = `<p><span class="purple">Latest blog posts for ${blogName}:</span><pre>\n</pre>`;
   let count = -1;
   fetch(feedUrl)
@@ -49,7 +48,7 @@ const getFeed = (feedUrl, blogName) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       html += `</p>`;
-      resolve(html, errorFlag);
+      resolve(html);
     }, 1000);
   });
 };

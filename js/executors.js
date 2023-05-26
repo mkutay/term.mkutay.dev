@@ -50,11 +50,8 @@ export default {
             error("yellow", "There is no feed for that blog.");
             return;
           }
-          // setTimeout(function() {
-          //   render(feedOutput);
-          // }, 500);
           let feedOutput = getFeed(blogInfo.feed, blogName);
-          feedOutput.then((html, errorFlag) => {
+          feedOutput.then((html) => {
             if (html == "fetch error</p>") return;
             render(html);
           });
