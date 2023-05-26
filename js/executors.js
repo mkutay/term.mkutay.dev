@@ -30,7 +30,6 @@ function ls_blogs() {
 export default {
   echo: (options) => {
     var echoStr = options.join(" ");
-    console.log(echoStr);
     render(echoStr, true);
   },
   feed: (options) => {
