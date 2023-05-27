@@ -37,7 +37,7 @@ input.addEventListener("keydown", function (e) {
 });
 
 window.addEventListener("load", () => {
-  executors.echo([`<p>Write <span class="purple">help</span> in the terminal to get a list of commands that you can use</p><pre>\n</pre>`])
+  executors.echo([`<p>Write <span class="purple">help</span> in the terminal to get a list of commands that you can use.</p><pre>\n</pre>`])
   executors.ls();
   // executors.motd();
   executors.echo([`<pre>\n</pre><p>Hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. Definitely check it out!</p>`]);
