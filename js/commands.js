@@ -11,6 +11,9 @@ export default [
       "shortcuts": {
         description: "Outputs the shortcut list"
       },
+      "projects": {
+        description: "Outputs the projects I did."
+      },
     },
     execute: executor.ls,
   },

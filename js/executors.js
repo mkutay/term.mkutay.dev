@@ -2,6 +2,7 @@ import { dateDiffInMinutes, error, render, getFeed } from "./helpers.js";
 import shortcuts from "./shortcuts.js";
 import blogs from "./blogs.js";
 import abouts from "./about.js";
+import projects from "./projects.js";
 
 function ls_shortcuts() {
   let shortcutsOutput = '<div class="shortcuts-container">';
@@ -25,6 +26,18 @@ function ls_blogs() {
     blogsOutput += "</div>";
   });
   render(blogsOutput + "</div>");
+}
+
+function ls_projects() {
+  let projectsOutput = '<div class="shortcuts-container">';
+  projects.forEach((s) => {
+    projectsOutput += `<div class="shortcuts"><p class="${s.color}">~/${s.category}</p>`;
+    Object.entries(s.items).forEach(([name, url_desc]) => {
+      projectsOutput += `<p><span class="${s.color}">> </span><a class="shortcut" href="${url_desc["url"]}">${name}</a>: ${url_desc["description"]}</p>`;
+    });
+    projectsOutput += "</div>";
+  });
+  render(projectsOutput + "</div>");
 }
 
 export default {
@@ -112,9 +125,11 @@ export default {
       else
         error("yellow", "No shortcuts added.");
     } else if (options.length == 1){
+      console.log(options);
       if (options[0] == "shortcuts") ls_shortcuts();
       else if (options[0] == "blogs") ls_blogs();
-      else error("yellow", "Option invalid.");
+      else if (options[0] == "projects") ls_projects();
+      else error("yellow", "Given option invalid.");
     } else {
       error("red", "I don't know what happened.");
     }

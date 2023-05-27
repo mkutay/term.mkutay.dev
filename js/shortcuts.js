@@ -12,16 +12,6 @@ export default [
       "Dynamic Initiative": "https://dynamicini.org",
     },
   },
-  // {
-  //   category: "School",
-  //   color: "red",
-  //   items: {
-  //     // Outlook: "https://outlook.office365.com/mail/inbox",
-  //     // Canvas: "https://sit.instructure.com",
-  //     // MyStevens: "https://login.stevens.edu/app/UserHome",
-  //
-  //   },
-  // },
   {
     category: "Contact",
     color: "cyan",
@@ -34,16 +24,4 @@ export default [
       Discord: "https://discordapp.com/users/582182759112638466",
     },
   },
-  // {
-  //   category: "Misc",
-  //   color: "purple",
-  //   items: {
-  //     Trakt: "https://trakt.tv/users/peterrauscher/lists",
-  //     YouTube: "https://www.youtube.com/",
-  //     // Fmovies: "https://fmovies.to/home",
-  //     // Zoro: "https://zoro.to",
-  //     // TempMail: "https://tempmail.email/",
-  //     // IPTorrents: "https://iptorrents.com/t",
-  //   },
-  // },
 ];
