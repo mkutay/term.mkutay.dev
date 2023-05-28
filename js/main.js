@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
   executors.echo([`<p>Write <span class="purple">help</span> in the terminal to get a list of commands that you can use.</p><pre>\n</pre>`])
   executors.ls();
   // executors.motd();
-  executors.echo([`<pre>\n</pre><p>Hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. Definitely check it out!</p>`]);
+  executors.echo([`<pre>\n</pre><p><span class="yellow">Update: </span>Hey! I have a new blog <a class="cyan" href="https://blog.mkutay.dev/">here</a>. Definitely check it out!</p>`]);
   let filenames = ["nord.png"];
   let root = document.getElementsByTagName("html")[0];
   root.style.backgroundImage = `url("./backgrounds/${
