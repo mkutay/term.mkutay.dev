@@ -10,7 +10,8 @@ export default [
       // Firebase: "https://console.firebase.google.com/u/0",
       "Cookie Blog": "https://cookieblog.net",
       "Dynamic Initiative": "https://dynamicini.org",
-      "WCA": "https://www.worldcubeassociation.org/persons/2018BOZK02",
+      // "WCA": "https://www.worldcubeassociation.org/persons/2018BOZK02",
+      "Sponsor Me": "https://github.com/sponsors/MKutay?o=esb",
     },
   },
   {
