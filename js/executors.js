@@ -41,6 +41,9 @@ function ls_projects() {
 }
 
 export default {
+  privacy: (options) => {
+    render("The privacy of my visitors is extremely important. I want everyone to know which of their information that this website stores/collects.<pre>\n</pre>This website uses Google Analytics (because it is free and I'm poor) to track the traffic to this site. This includes IP addresses, types of browsers, ISP, number of clicks, referring and exit pages. Thank you.")
+  },
   echo: (options) => {
     var echoStr = options.join(" ");
     render(echoStr, true);

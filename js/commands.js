@@ -51,5 +51,10 @@ export default [
     name: ["echo"],
     description: "Writes something to the command line.",
     execute: executor.echo,
+  },
+  {
+    name: ["privacy-policy"],
+    description: "Displayes the privacy policy of this website.",
+    execute: executor.privacy,
   }
 ];
