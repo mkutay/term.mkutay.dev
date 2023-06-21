@@ -6,6 +6,7 @@ export default [
       "Moodle Scraper": {url: "https://github.com/MKutay/moodle-scraper", description: "A python web scraper for school management system Moodle."},
       "Terminal Jekyll": {url: "https://github.com/MKutay/terminal-blog-jekyll", description: "Jekyll theme that has a terminal style."},
       "Kermes Logging": {url: "https://github.com/MKutay/kermes-service", description: "A node.js app to store things bought in our class's kermes."},
+      "Chess AI": {url: "https://github.com/MKutay/glowing-chess-solver", description: "A simple Chess bot using minimax."}
     },
   },
   {
